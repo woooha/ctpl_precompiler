@@ -1,3 +1,4 @@
+#!python
 # vim : set fileencoding=utf-8
 import os,sys
 from optparse import OptionParser
