@@ -1,4 +1,4 @@
-#!python
+#!/usr/bin/env python
 # vim : set fileencoding=utf-8
 import os,sys
 from optparse import OptionParser
@@ -20,7 +20,7 @@ if not os.path.exists(asp_root + "/bin/asp") or not os.path.exists(asp_root + "/
     print "您输入的路径不是 asp 程序的根目录"
     exit(1)
 
-precompile_path = os.path.abspath( os.path.dirname(os.getcwd() + '/../' + sys.argv[0]) )
+precompile_path = os.path.abspath( os.path.dirname( os.path.abspath( sys.argv[0] ) ) + '/..')
 src_path = precompile_path + "/src"
 tools_path = precompile_path + "/tools"
 

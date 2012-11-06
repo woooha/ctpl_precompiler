@@ -1,11 +1,12 @@
-#!python
+#!/usr/bin/env python
 #vim : set fileencoding=utf-8
 import sys,os,re
 
-bin_path = os.path.dirname(os.getcwd() + '/' + sys.argv[0])
-conf_path = os.path.abspath(bin_path + "/../conf")
+asp_root = os.path.abspath(os.path.dirname(os.path.abspath( sys.argv[0])) + '/..')
+bin_path = asp_root + '/bin'
+conf_path = asp_root + '/conf'
 asp_conf = conf_path + "/asp.conf"
-templates_path = os.path.abspath( bin_path + "/../data/template" )
+templates_path = asp_root + "/data/template"
 
 def get_reload_port( conf_file ):
     fd = open( conf_file )
