@@ -1,17 +1,19 @@
 #!/usr/bin/env python
-import re,os,optparse,sys
+import re,os,optparse,sys,io
 
 class Parser:
     __symbols = {}
     __if_stack = []
-    def parse(self, module_path): 
+    def parse(self, module_path, compress = False): 
         origin_cwd = os.getcwd()
         module_path = os.path.abspath(module_path)
         os.chdir( os.path.dirname(module_path) )
-        fp = open(module_path)
+        fp = io.open(module_path)
         source = fp.read()
         source = self.__traverse_ctpl_tag(source)
         os.chdir(origin_cwd)
+        if compress:
+            source = self.compress(source)
         return source
 
     def __traverse_ctpl_tag(self, source):

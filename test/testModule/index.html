@@ -1,0 +1,13 @@
+$import map$
+<style>
+    div{color:red}
+</style>
+$map.style$
+$if $
+<div>This is HTML</div>
+$endif$
+<script>var a = 1;alert(1)</script>
+$map.html$
+$map.script$
+$extend map.html$
+$extend if_elseif.html$

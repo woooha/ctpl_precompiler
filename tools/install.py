@@ -24,7 +24,7 @@ precompile_path = os.path.abspath( os.path.dirname( os.path.abspath( sys.argv[0]
 src_path = precompile_path + "/src"
 tools_path = precompile_path + "/tools"
 
-os.system("cp %s/compile.py %s/Template.py %s/bin/" % (src_path, src_path, asp_root) )
+os.system("cp %s/Parser.py %s/bin/" % (src_path, asp_root) )
 os.system("cp %s/reload.py %s/bin/" % (tools_path, asp_root) )
 
 print "安装成功!"

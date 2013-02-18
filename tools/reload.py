@@ -23,7 +23,7 @@ def get_reload_port( conf_file ):
 
 def compile_template( tpl_dir ):
     if os.path.exists(tpl_dir + "/index.html" ):
-        os.system( "python %s/compile.py %s/index.html -o %s/page.html"%(bin_path, tpl_dir, tpl_dir) ) 
+        os.system( "python %s/Parser.py %s/index.html -o %s/page.html"%(bin_path, tpl_dir, tpl_dir) ) 
 
 for entry in os.listdir( templates_path ):
     if os.path.isdir(templates_path + '/' + entry ):
